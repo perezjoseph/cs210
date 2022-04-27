@@ -12,13 +12,13 @@ def check_winner(gri):
         return False
 
     else:
+        #Test Variable
         b = re.sub("\D","", grid)
+        #Make if the gam
         if re.sub("\D", "", grid)  == '':
-            print("Game Over")
+            print("Tie")
             return False
         return True
-
-
 def game_modifier(ans,entity):
     #Modify the string
     gr = grid.replace(str(ans),entity)
@@ -26,6 +26,7 @@ def game_modifier(ans,entity):
 def validation(ans,entity):
     #Check if the input is valid
     global grid
+    #Use regular expressions to modify the string
     gri = re.sub("\n\-\+\-\+\-\n","|",grid)
     gri = gri.split("|")
     while gri[ans-1] =="x" or gri[ans-1] == "O":
